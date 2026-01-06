@@ -273,6 +273,6 @@ matplotlib
 - Evaluate performance on true cold-start users and items
 - Explore neural and sequential recommender models
 
-## 📄 License
+##  License
 This project is for educational/research purposes. Please ensure proper attribution when using the Food.com dataset.
 
