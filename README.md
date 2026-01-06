@@ -2,7 +2,7 @@
 
 A comprehensive machine learning project that implements and evaluates multiple recommendation system approaches for food recipes using the Food.com dataset. The project explores content-based filtering, collaborative filtering, and hybrid recommendation techniques across four distinct phases.
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)
 - [Dataset](#dataset)
@@ -15,7 +15,7 @@ A comprehensive machine learning project that implements and evaluates multiple 
 - [Usage](#usage)
 - [Project Phases](#project-phases)
 
-## 🎯 Overview
+##  Overview
 
 This project implements a multi-phase recommendation system for food recipes, comparing various recommendation algorithms including:
 
@@ -26,7 +26,11 @@ This project implements a multi-phase recommendation system for food recipes, co
 
 The goal is to predict user ratings for recipes and provide personalized recipe recommendations.
 
-## 📊 Dataset
+## Motivation
+Recommender systems often struggle with sparsity and cold-start problems in real-world datasets.
+This project explores how hybrid approaches can combine content-based and collaborative signals to improve recommendation quality, robustness, and interpretability at scale.
+
+##  Dataset
 
 The project uses the Food.com dataset containing:
 
@@ -43,14 +47,14 @@ The project uses the Food.com dataset containing:
 - Final dataset: 276,559 reviews from 4,416 users and 10,268 recipes
 - Train/Test split: 80/20 (221,247 training, 55,312 test samples)
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 ├── ML_project_food_com_final_submission.ipynb  # Main notebook with all code
 └── README.md                                    # This file
 ```
 
-## 🔬 Methodology
+##  Methodology
 
 ### Feature Engineering
 
@@ -64,7 +68,7 @@ The project uses the Food.com dataset containing:
 - **User Similarity**: Cosine similarity on user-centered rating vectors
 - **Item Similarity**: Cosine similarity on item-centered rating vectors (Top-K=100)
 
-## 🤖 Models Implemented
+##  Models Implemented
 
 ### Phase 1: Basic Recommendation Models
 
@@ -126,7 +130,7 @@ The project uses the Food.com dataset containing:
    - Ridge regression on base model predictions
    - Features: predictions from CBF, MF, PMF, ItemCF
 
-## 📈 Evaluation Metrics
+##  Evaluation Metrics
 
 The project evaluates models using multiple metrics:
 
@@ -140,7 +144,7 @@ The project evaluates models using multiple metrics:
 - **Recall@K**: Fraction of relevant items found in top-K
 - **NDCG@K**: Normalized Discounted Cumulative Gain at K
 
-## 📊 Results Summary
+##  Results Summary
 
 ### Best Performing Models (Test Set)
 
@@ -173,7 +177,7 @@ The project evaluates models using multiple metrics:
 - H2 (3-way blend) showed best balance across metrics
 - Meta-learner (H4) achieved best FCP but higher RMSE
 
-## 📦 Requirements
+##  Requirements
 
 ### Python Libraries
 
@@ -191,7 +195,12 @@ matplotlib
 
 **Note**: The notebook is configured for Google Colab with data stored in Google Drive. Adjust the `DATA_DIR` path for local execution.
 
-## 🚀 Usage
+## Reproducibility Notes
+- Raw Food.com datasets are not included due to size and licensing constraints.
+- Users must download the dataset separately and update the `DATA_DIR` path.
+- Experiments were run on Google Colab due to memory and compute requirements.
+
+##  Usage
 
 ### Running the Notebook
 
@@ -220,7 +229,7 @@ matplotlib
 - **MF Factors**: 20 latent factors
 - **Relevance Threshold**: Rating ≥ 5 for ranking metrics
 
-## 📚 Project Phases
+##  Project Phases
 
 ### Phase 1: Foundation Models
 - Basic CBF and CF implementations
@@ -242,7 +251,7 @@ matplotlib
 - Meta-learning approach
 - Context-aware switching
 
-## 🔍 Key Insights
+##  Key Insights
 
 1. **Hybrid models consistently outperform individual approaches**
 2. **Matrix Factorization provides strong baseline for collaborative filtering**
@@ -250,33 +259,20 @@ matplotlib
 4. **Meta-learning can improve ranking quality (FCP) but may increase RMSE**
 5. **The 3-way blend (H2) offers best overall performance balance**
 
-## 📝 Notes
+##  Notes
 
 - The project uses a filtered dataset to ensure sufficient data for each user and recipe
 - Some models use subsampling for computational efficiency (Kernel Ridge, Meta-Learner)
 - All models are evaluated on the same test set for fair comparison
 - Ranking metrics use K values: [1, 3, 5, 10, 20, 50]
 
-## 👤 Authors
+##  Future Work
 
-**Dharm Maheshkumar Patel**  
-Email: dp1482@scarletmail.rutgers.edu  
-
-**Soumya Vajahhala**  
-Email: sv949@scarletmail.rutgers.edu  
-
-**Pradhyumna Kiledar**  
-Email: pk811@scarletmail.rutgers.edu  
-
-**Riyash Patel**  
-Email: rcp153@scarletmail.rutgers.edu  
-
-Rutgers University  
-Department of Computer Science  
-Machine Learning Project – Food.com Recipe Recommendation System
-
+- Refactor the notebook into modular Python scripts
+- Add unit tests for core recommender components
+- Evaluate performance on true cold-start users and items
+- Explore neural and sequential recommender models
 
 ## 📄 License
-
 This project is for educational/research purposes. Please ensure proper attribution when using the Food.com dataset.
 
